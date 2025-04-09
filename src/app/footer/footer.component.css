@@ -1,0 +1,7 @@
+.footer {
+    background: var(--verde-secundario);
+    color: var(--verde-oscuro);
+    text-align: center;
+    padding: 1.5rem;
+  }
+  
