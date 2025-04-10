@@ -12,7 +12,7 @@ export class HomeComponent {
 
   verDetalles(planta: string) {
     // Redirige al componente EnProceso
-    //this.router.navigate([`/plantas/${planta}`]);
+    this.router.navigate(['plantas']);
   }
 
   playBiteSound() {

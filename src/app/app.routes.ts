@@ -4,6 +4,6 @@ import { EnProcesoComponent } from './en-proceso/en-proceso.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
-  //{ path: 'plantas/:nombre', component: EnProcesoComponent }, 
+  { path: 'plantas', component: EnProcesoComponent }, 
   { path: '**', redirectTo: '' }
 ];
