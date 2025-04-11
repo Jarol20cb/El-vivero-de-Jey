@@ -11,6 +11,8 @@
   --boton-secundario: var(--verde-secundario);
   --boton-secundario-hover: var(--verde-principal);
   --sombra-boton: rgba(0, 0, 0, 0.1);
+  --boton-cancelar: rgb(212, 13, 13);
+  --boton-cancelar-hover: rgb(239, 101, 101);
 }
 
 
