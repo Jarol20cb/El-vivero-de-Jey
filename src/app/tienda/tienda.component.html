@@ -1,0 +1,67 @@
+<div class="tienda-container">
+  <div class="buscador">
+    <input type="text" placeholder="Buscar plantas..." [(ngModel)]="busqueda" />
+    <div class="chips">
+      <div class="chip" [class.activo]="filtro === 'todos'" (click)="setFiltro('todos')">Todos</div>
+      <div class="chip" [class.activo]="filtro === 'venus'" (click)="setFiltro('venus')">Venus</div>
+      <div class="chip" [class.activo]="filtro === 'drosera'" (click)="setFiltro('drosera')">Drosera</div>
+      <div class="chip" [class.activo]="filtro === 'nepenthes'" (click)="setFiltro('nepenthes')">Nepenthes</div>
+      <div class="chip" [class.activo]="filtro === 'sarracenias'" (click)="setFiltro('sarracenias')">Sarracenias</div>
+    </div>
+  </div>
+
+  <div class="productos-grid">
+    <div class="producto-card" *ngFor="let producto of productosFiltrados" [ngClass]="{'oferta': producto.enOferta}">
+      <div class="producto-imagen">
+        <img [src]="producto.imagen" alt="{{ producto.nombre }}" />
+      </div>
+      <div class="producto-info">
+        <h3>{{ producto.nombre }}</h3>
+        <p>{{ producto.descripcion }}</p>
+        
+        <div class="precios">
+          <span class="precio-tachado" *ngIf="producto.enOferta">S/ {{ producto.precioOriginal }}</span>
+          <span class="precio">S/ {{ producto.precio }}</span>
+        </div>
+
+        <div *ngIf="producto.disponible" class="disponible">Disponible</div>
+        <div *ngIf="!producto.disponible" class="no-disponible">No disponible</div>
+
+        <div *ngIf="producto.enOferta" class="oferta">En Oferta</div>
+
+        <button class="btn-ver" (click)="anadirAlCarrito(producto)">Añadir al carrito</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="carrito-icono" (click)="toggleOverlay()">
+    🛒
+    <span *ngIf="carrito.length > 0" class="contador">{{ getCantidadTotal() }}</span>
+  </div>
+
+  <div class="carrito-overlay" *ngIf="mostrarOverlay">
+    <div class="overlay-contenido">
+      <div class="overlay-header">
+        <h2>Tu Carrito</h2>
+        <button class="cerrar-btn" (click)="toggleOverlay()">✖</button>
+      </div>
+      <div *ngIf="carrito.length === 0">
+        <p>No hay productos en el carrito.</p>
+      </div>
+      <div *ngFor="let item of carrito" class="item-carrito">
+        <div class="detalle">
+          <img [src]="item.imagen" alt="{{ item.nombre }}" class="producto-imagen-mini" />
+          <strong>{{ item.nombre }}</strong> - S/ {{ item.precio }} x {{ item.cantidad }} unidades
+        </div>
+        <div class="acciones">
+          <button (click)="cambiarCantidad(item, 1)">+</button>
+          <button (click)="cambiarCantidad(item, -1)">-</button>
+        </div>
+      </div>
+      <div class="carrito-acciones">
+        <button class="btn-solicitar" (click)="enviarPedidoWhatsApp()">Solicitar pedido</button>
+        <button class="btn-cancelar" (click)="cancelarCarrito()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>

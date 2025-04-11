@@ -11,7 +11,7 @@ export class HomeComponent {
   constructor(private router: Router) {}
 
   verTienda() {
-    this.router.navigate(['error']);
+    this.router.navigate(['tienda']);
   }
 
   venus(planta: string) {

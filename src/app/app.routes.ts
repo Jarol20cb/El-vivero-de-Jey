@@ -5,6 +5,7 @@ import { VenusComponent } from './especies/venus/venus.component';
 import { NepenthesComponent } from './especies/nepenthes/nepenthes.component';
 import { SarraceniaComponent } from './especies/sarracenia/sarracenia.component';
 import { DroserasComponent } from './especies/droseras/droseras.component';
+import { TiendaComponent } from './tienda/tienda.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -13,5 +14,6 @@ export const routes: Routes = [
   { path: 'especies/nepenthes', component: NepenthesComponent },
   { path: 'especies/drosera', component: DroserasComponent },
   { path: 'especies/sarracenia', component: SarraceniaComponent },
+  { path: 'tienda', component: TiendaComponent },
   { path: '**', redirectTo: '' }
 ];
