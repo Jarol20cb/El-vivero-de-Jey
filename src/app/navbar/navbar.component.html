@@ -1,5 +1,5 @@
 <header class="navbar">
-  <img src="logo.png" alt="El Vivero de Jey" class="logo" />
+  <img src="logo.png" alt="El Vivero de Jey" class="logo" (click)="scrollToSection('inicio')" />
   
   <!-- Botón hamburguesa -->
   <div class="menu-toggle" (click)="toggleMenu()">
@@ -9,7 +9,7 @@
   </div>
   
   <nav>
-    <ul [class.active]="menuActive"> <!-- Condicional para mostrar u ocultar -->
+    <ul [class.active]="menuActive">
       <li><a (click)="scrollToSection('inicio')">Inicio</a></li>
       <li><a (click)="scrollToSection('plantas')">Plantas</a></li>
       <li><a (click)="scrollToSection('nosotros')">Nosotros</a></li>

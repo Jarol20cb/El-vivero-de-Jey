@@ -1,0 +1,261 @@
+.planta-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    box-sizing: border-box;
+    border-radius: 1.5rem;
+  }
+  
+  .contenido-principal {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex: 1 1 100%;
+  }
+  
+  .imagen-principal {
+    flex: 1 1 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .imagen-principal img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .imagen-principal img:hover {
+    transform: scale(1.05);
+  }
+  
+  .descripcion-container {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--verde-oscuro);
+    text-align: left;
+  }
+  
+  h3 {
+    font-size: 1.6rem;
+    color: var(--verde-hover);
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+  
+  .descripcion {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--texto-principal);
+    text-align: justify;
+  }
+  
+  .informacion {
+    margin-bottom: 1.5rem;
+  }
+  
+  ul {
+    padding-left: 1.5rem;
+    list-style: disc;
+  }
+  
+  .contenido-bajo {
+    flex: 1 1 100%;
+    margin-top: 3rem;
+  }
+  
+  .cuidados-basicos {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .cuidado {
+    flex: 1 1 30%;
+    text-align: center;
+  }
+  
+  .cuidado img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+  }
+  
+  .galeria-container {
+    text-align: center;
+  }
+  
+  .galeria-imagenes {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .galeria-imagenes img {
+    width: 23%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .galeria-imagenes img:hover {
+    transform: scale(1.05);
+  }
+  
+  .contacto {
+    margin-top: 3rem;
+    text-align: center;
+  }
+  
+  .advertencias {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .advertencias-titulo {
+    font-size: 1.8rem;
+    color: red;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  .advertencias p {
+    font-size: 1.1rem;
+    color: var(--texto-principal);
+    margin-bottom: 1.5rem;
+    text-align: justify;
+  }
+  
+  .advertencia {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .advertencia img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 1rem;
+  }
+  
+  .advertencia p {
+    font-size: 1.1rem;
+    color: var(--texto-principal);
+    flex: 1;
+  }
+  
+  .advertencia strong {
+    font-weight: bold;
+    color: var(--verde-oscuro);
+  }
+  
+  @media (max-width: 768px) {
+    .planta-container {
+      flex-direction: column;
+      padding: 1.5rem;
+    }
+  
+    .contenido-principal {
+      flex-direction: column;
+    }
+  
+    .imagen-principal {
+      flex: 1 1 100%;
+    }
+  
+    .descripcion-container {
+      flex: 1 1 100%;
+    }
+  
+    h2 {
+      font-size: 2rem;
+    }
+  
+    h3 {
+      font-size: 1.4rem;
+    }
+  
+    .galeria-imagenes img {
+      width: 48%;
+    }
+  
+    .cuidado img {
+      width: 80%;
+    }
+  
+    .advertencia img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 1rem;
+    }
+  
+    .advertencia {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h2 {
+      font-size: 1.8rem;
+    }
+  
+    .galeria-imagenes img {
+      width: 100%;
+      height: 150px;
+    }
+  
+    .advertencias-titulo {
+      font-size: 1.5rem;
+    }
+  
+    .advertencia p {
+      font-size: 1rem;
+    }
+  
+    .contacto h3 {
+      font-size: 1.4rem;
+    }
+  
+    .contacto p {
+      font-size: 1rem;
+    }
+  
+    .galeria-imagenes {
+      grid-template-columns: 1fr;
+    }
+  }
+  
