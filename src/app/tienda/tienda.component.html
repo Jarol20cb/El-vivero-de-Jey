@@ -34,10 +34,11 @@
     </div>
   </div>
 
-  <div class="carrito-icono" (click)="toggleOverlay()">
-    🛒
-    <span *ngIf="carrito.length > 0" class="contador">{{ getCantidadTotal() }}</span>
-  </div>
+  <!-- dentro del div tienda-container -->
+<div class="carrito-icono" (click)="toggleOverlay()">
+  <i class="fas fa-cart-shopping"></i>
+  <span *ngIf="carrito.length > 0" class="contador">{{ getCantidadTotal() }}</span>
+</div>
 
   <div class="carrito-overlay" *ngIf="mostrarOverlay">
     <div class="overlay-contenido">
@@ -51,7 +52,7 @@
       <div *ngFor="let item of carrito" class="item-carrito">
         <div class="detalle">
           <img [src]="item.imagen" alt="{{ item.nombre }}" class="producto-imagen-mini" />
-          <strong>{{ item.nombre }}</strong> - S/ {{ item.precio }} x {{ item.cantidad }} unidades
+          <strong>{{ item.nombre }}</strong> - S/ {{ item.precio }} x <strong>{{ item.cantidad }}</strong> unidades
         </div>
         <div class="acciones">
           <button (click)="cambiarCantidad(item, 1)">+</button>
