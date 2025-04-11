@@ -10,18 +10,22 @@ export class HomeComponent {
 
   constructor(private router: Router) {}
 
-  verDetalles(planta: string) {
-    this.router.navigate(['plantas']);
+  verTienda() {
+    this.router.navigate(['error']);
   }
+
   venus(planta: string) {
     this.router.navigate(['especies/venus']);
   }
+
   drosera(planta: string) {
     this.router.navigate(['especies/drosera']);
   }
+
   nepenthe(planta: string) {
     this.router.navigate(['especies/nepenthes']);
   }
+
   sarracenia(planta: string) {
     this.router.navigate(['especies/sarracenia']);
   }

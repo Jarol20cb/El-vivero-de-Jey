@@ -8,7 +8,7 @@ import { DroserasComponent } from './especies/droseras/droseras.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'plantas', component: EnProcesoComponent },
+  { path: 'error', component: EnProcesoComponent },
   { path: 'especies/venus', component: VenusComponent },
   { path: 'especies/nepenthes', component: NepenthesComponent },
   { path: 'especies/drosera', component: DroserasComponent },
