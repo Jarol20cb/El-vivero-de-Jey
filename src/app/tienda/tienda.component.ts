@@ -26,6 +26,16 @@ export class TiendaComponent {
       enOferta: true
     },
     {
+      nombre: 'Trio Salvaje para principiantes',
+      tipo: 'venus',
+      descripcion: 'Inicia tu primera aventura con el pack de principiantes',
+      imagen: 'tienda/pack.jpg',
+      precio: 39.90,
+      precioOriginal: 45,
+      disponible: true,
+      enOferta: true
+    },
+    {
       nombre: 'Venus Atrapamoscas ARCP',
       tipo: 'venus',
       descripcion: 'Trampas grandes. Come presas grandes.',
