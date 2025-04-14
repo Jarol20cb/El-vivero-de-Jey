@@ -11,6 +11,10 @@
   </div>
 
   <div class="productos-grid">
+    <div *ngIf="productosFiltrados.length === 0" class="no-resultados">
+      <img src="vacio.png" alt="No se encontraron productos" />
+      <p class="mensaje-busqueda">No encontramos lo que buscas, ¡sigue explorando!</p>
+    </div>    
     <div class="producto-card" *ngFor="let producto of productosFiltrados" [ngClass]="{'oferta': producto.enOferta}">
       <div class="producto-imagen">
         <img [src]="producto.imagen" alt="{{ producto.nombre }}" />
@@ -18,21 +22,17 @@
       <div class="producto-info">
         <h3>{{ producto.nombre }}</h3>
         <p>{{ producto.descripcion }}</p>
-        
         <div class="precios">
           <span class="precio-tachado" *ngIf="producto.enOferta">S/ {{ producto.precioOriginal }}</span>
           <span class="precio">S/ {{ producto.precio }}</span>
         </div>
-
         <div *ngIf="producto.disponible" class="disponible">Disponible</div>
         <div *ngIf="!producto.disponible" class="no-disponible">No disponible</div>
-
         <div *ngIf="producto.enOferta" class="oferta">En Oferta</div>
-
         <button class="btn-ver" (click)="anadirAlCarrito(producto)">Añadir al carrito</button>
       </div>
     </div>
-  </div>
+  </div>  
 
   <!-- dentro del div tienda-container -->
 <div class="carrito-icono" (click)="toggleOverlay()">
